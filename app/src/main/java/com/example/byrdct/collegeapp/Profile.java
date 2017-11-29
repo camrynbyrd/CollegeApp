@@ -5,8 +5,8 @@ package com.example.byrdct.collegeapp;
  */
 
 public class Profile {
-    String FirstName;
-    String LastName;
+    private String FirstName;
+    private String LastName;
 
     public String getFirstName() {
         return FirstName;
