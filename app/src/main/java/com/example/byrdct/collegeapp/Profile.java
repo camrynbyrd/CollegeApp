@@ -5,19 +5,27 @@ package com.example.byrdct.collegeapp;
  */
 
 public class Profile {
-    private String FirstName;
-    private String LastName;
+    private String firstName;
+    private String lastName;
+
 
     public String getFirstName() {
-        return FirstName;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
-        FirstName = firstName;
+        this.firstName = firstName;
     }
 
-    public Profile(String firstName) {
+    public String getLastName() {
+        return lastName;
+    }
 
-        FirstName = firstName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+
+
+    firstName = "Alan";
+        lastName = "lastName";
     }
 }
