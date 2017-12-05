@@ -9,8 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import static android.R.attr.button;
-
 /**
  * Created by byrdct on 11/27/2017.
  */
@@ -20,7 +18,7 @@ import static android.R.attr.button;
     TextView mFMFirstName;
     TextView mFMLastName;
     EditText mFMEdit;
-    FamilyMember mFamilyMember = new FamilyMember();
+    Guardian mguardian = new Guardian();
 
     Button UpdateButton;
 
@@ -28,15 +26,15 @@ import static android.R.attr.button;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
          super.onCreateView(inflater, container, savedInstanceState);
-        View rootView = inflater.inflate(R.layout.fragment_family_member, container, false);
+        View rootView = inflater.inflate(R.layout.guardianFragment, container, false);
 
         mFMFirstName = (TextView) rootView.findViewById(R.id.FirstName);
         mFMLastName = (TextView) rootView.findViewById(R.id.LastName);
-        mFMFirstName.setText(mFamilyMember.getFirstName());
-        mFMFirstName.setText(mFamilyMember.getLastName());
+        mFMFirstName.setText(mguardian.getFirstName());
+        mFMFirstName.setText(mguardian.getLastName());
         mFMEdit = (EditText) rootView.findViewById(R.id.EditFamilyMember);
 
-        button = (Button) rootView.findViewById(R.id.UpdateButton);
+        UpdateButton = (Button) rootView.findViewById(R.id.UpdateButton);
 
         return rootView;
     }

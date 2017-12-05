@@ -4,20 +4,25 @@ package com.example.byrdct.collegeapp;
  * Created by byrdct on 11/27/2017.
  */
 
-public class Guardian {
-    String FirstName;
-    String LastName;
+public class Guardian extends FamilyMember {
 
-    public String getFirstName() {
-        return FirstName;
-    }
-
-    public void setFirstName(String firstName) {
-        FirstName = firstName;
-    }
-
+    String occupation;
     public Guardian(String firstName) {
 
-        FirstName = firstName;
+        firstName = firstName;
+
     }
+
+    public Guardian(){
+       firstName = "John";
+        occupation = "Doctor";
+
+    }
+
+
+
+
+
 }
+
+

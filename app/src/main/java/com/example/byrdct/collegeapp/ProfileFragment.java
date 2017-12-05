@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.app.Fragment;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -22,9 +23,12 @@ import static android.R.attr.button;
     TextView mPLastName;
     EditText mPEdit;
     Profile mProfile = new Profile();
+    DatePicker DateButton;
 
 
-    button.setOnclickListener(new View.OnClickListener());
+
+
+    Button button;
 
     @Nullable
         @Override
@@ -32,7 +36,7 @@ import static android.R.attr.button;
             super.onCreateView(inflater, container, savedInstanceState);
             View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        button.setOnclickListener(new View.OnClickListener());
+
 
 
         mPFirstName = (TextView) rootView.findViewById(R.id.FirstName);
@@ -40,9 +44,21 @@ import static android.R.attr.button;
         mPFirstName.setText(mProfile.getFirstName());
         mPFirstName.setText(mProfile.getLastName());
         mPEdit = (EditText) rootView.findViewById(R.id.EditName);
-        button = (Button) rootView.findViewById(R.id.pNameEdit);
+        button = (Button) rootView.findViewById(R.id.profile);
+        DateButton  = (DatePicker) rootView.findViewById(R.id.dob);
 
 
+
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mPFirstName.setText(mPEdit.getText());
+                mPFirstName.setText(mPEdit.getText());
+
+            }
+        });
 
 
         return rootView;
