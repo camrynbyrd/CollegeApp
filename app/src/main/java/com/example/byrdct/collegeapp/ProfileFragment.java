@@ -11,6 +11,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.Calendar;
+
 import static android.R.attr.button;
 
 /**
@@ -20,15 +22,15 @@ import static android.R.attr.button;
     public class ProfileFragment extends android.support.v4.app.Fragment{
 
     TextView mPFirstName;
+    TextView getmPFirstName;
     TextView mPLastName;
-    EditText mPEdit;
+    EditText fnameEdit;
+    EditText lnameEdit;
     Profile mProfile = new Profile();
-    DatePicker DateButton;
+    DatePicker dob;
+    Button update;
+    Calendar calendar = Calendar.getInstance();
 
-
-
-
-    Button button;
 
     @Nullable
         @Override
@@ -43,23 +45,39 @@ import static android.R.attr.button;
         mPLastName = (TextView) rootView.findViewById(R.id.LastName);
         mPFirstName.setText(mProfile.getFirstName());
         mPFirstName.setText(mProfile.getLastName());
-        mPEdit = (EditText) rootView.findViewById(R.id.EditName);
-        button = (Button) rootView.findViewById(R.id.profile);
-        DateButton  = (DatePicker) rootView.findViewById(R.id.dob);
+        fnameEdit = (EditText) rootView.findViewById(R.id.edit_lname);
+        lnameEdit = (EditText) rootView.findViewById(R.id.edit_fname);
+        update = (Button) rootView.findViewById(R.id.profile);
+        dob = (DatePicker) rootView.findViewById(R.id.dob);
 
 
 
 
-        button.setOnClickListener(new View.OnClickListener() {
+        update.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
 
-                mPFirstName.setText(mPEdit.getText());
-                mPFirstName.setText(mPEdit.getText());
+                mPFirstName.setText(fnameEdit.getText());
+                mPLastName.setText(lnameEdit.getText());
+                dob.init(mProfile.getDob().get(Calendar.YEAR), mProfile.getDob().get(Calendar.MONTH), mProfile.getDob().get(Calendar.DAY_OF_MONTH), null );
 
-            }
-        });
+                int day = dob.getDayOfMonth();
+                int month = dob.getMonth();
+                int year = dob.getYear();
 
+
+                        calendar.set(year, month, day);
+                        mProfile.setDob(year, month, day);
+
+
+
+
+
+
+                    }
+
+                });
 
         return rootView;
 

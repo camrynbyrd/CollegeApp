@@ -25,14 +25,20 @@
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/EditName"
+        android:id="@+id/edit_fname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/edit_lname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
 
     <DatePicker
         android:id="@+id/dob"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:calendarViewShown="false"/>
 
 
     

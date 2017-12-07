@@ -11,9 +11,9 @@ import android.widget.TextView;
 
 /**
  * Created by byrdct on 11/27/2017.
- */
+*/
 
-    public class FamilyMemberFragment extends android.support.v4.app.Fragment{
+public class GuardianFragment extends android.support.v4.app.Fragment{
 
     TextView mFMFirstName;
     TextView mFMLastName;
@@ -25,8 +25,8 @@ import android.widget.TextView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-         super.onCreateView(inflater, container, savedInstanceState);
-        View rootView = inflater.inflate(R.layout.guardianFragment, container, false);
+        super.onCreateView(inflater, container, savedInstanceState);
+        View rootView = inflater.inflate(R.layout.fragment_guardian, container, false);
 
         mFMFirstName = (TextView) rootView.findViewById(R.id.FirstName);
         mFMLastName = (TextView) rootView.findViewById(R.id.LastName);
